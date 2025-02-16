@@ -9,7 +9,7 @@ def create_app(test_config=None):
     load_dotenv(override=True) # load data from the .env file
     app.config.from_mapping(
         SECRET_KEY=os.getenv('FLASK_SECRET_KEY'), # set the secret key
-        DATABASE=os.path.join(app.instance_path, 'appname.sqlite'),
+        DATABASE=os.path.join(app.instance_path, 'portfolio.sqlite'),
     )
 
     if test_config is None:

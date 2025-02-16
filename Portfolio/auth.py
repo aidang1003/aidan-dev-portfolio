@@ -5,7 +5,7 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from appname.db import get_db
+from Portfolio.db import get_db
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -13,22 +13,23 @@ auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 @auth_bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
-        walletaddress = request.form['walletaddress']
+        username = request.form['username']
+        password = request.form['password']
         db = get_db()
         error = None
 
-        if not walletaddress:
-            error = 'Wallet address is required.'
+        if not username:
+            error = 'username is required.'
 
         if error is None:
             try:
                 db.execute(
-                    "INSERT INTO user (walletaddress, minimumBalance, maximumBalance, factor) VALUES (?, ?, ?, ?)",
-                    (walletaddress, 0, 5000, 2), # hard-coded values for now #TODO
+                    "INSERT INTO user (username, password) VALUES (?, ?)",
+                    (username, password), # hard-coded values for now #TODO
                 )
                 db.commit()
             except db.IntegrityError:
-                error = f"Address {walletaddress} is already registered."
+                error = f"Address {username} is already registered."
             else:
                 return redirect(url_for("auth.login"))
 
@@ -39,15 +40,16 @@ def register():
 @auth_bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
-        walletaddress = request.form['walletaddress']
+        username = request.form['username']
+        password = request.form['password']
         db = get_db()
         error = None
         user = db.execute(
-            'SELECT * FROM user WHERE walletaddress = ?', (walletaddress,)
+            'SELECT * FROM user WHERE username = ? and password = ?', (username, password)
         ).fetchone()
 
         if user is None:
-            error = 'Incorrect Wallet Address.'
+            error = 'Incorrect username'
 
         if error is None:
             session.clear()

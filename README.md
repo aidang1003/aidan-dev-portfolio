@@ -18,9 +18,11 @@
 
 4. Install the dependencies `pip install -r requirements.txt`
 
-5. Initialize the db `flask --app appname init-db`
+5. Create the dotenv file `echo FLASK_SECRET_KEY = sessionkey1559 > .env`
 
-6. Start the app `flask --app appname run --debug`
+6. Initialize the db `flask --app portfolio init-db`
+
+7. Start the app `flask --app portfolio run --debug`
 
 ---
 
