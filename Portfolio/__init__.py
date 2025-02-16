@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, request, redirect
+from flask import Flask, session, render_template, request, redirect, url_for
 from dotenv import load_dotenv
 import os
 
@@ -28,6 +28,10 @@ def create_app(test_config=None):
     @app.route('/')
     def index():
         return render_template('index.html', pageTitle='Homepage', session=session)
+    
+    @app.route('/favicon.ico')
+    def favicon():
+        return url_for('static', filename='images/favicon.ico')
 
     from . import db
     db.init_app(app)
