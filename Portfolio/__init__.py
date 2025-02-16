@@ -35,4 +35,16 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.auth_bp)
 
+    from . import about
+    app.register_blueprint(about.about_bp)
+
+    from . import resume
+    app.register_blueprint(resume.resume_bp)
+    
+    from . import projects
+    app.register_blueprint(projects.projects_bp)
+
+    from . import contact
+    app.register_blueprint(contact.contact_bp)
+
     return app

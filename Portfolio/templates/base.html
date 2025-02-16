@@ -13,7 +13,7 @@
   <body class="body">
     <header class="login">
       {% if g.user %}
-      <span class="authenticated">{{ g.user['walletaddress'] }}</span>
+      <span class="authenticated">{{ g.user['username'] }}</span>
       <a class="auth-link" href="{{ url_for('auth.logout') }}">Log Out</a>
       {% else %}
       <a class="auth-link" href="{{ url_for('auth.register') }}">Register</a>
@@ -26,7 +26,7 @@
       <div class="container">
         <header>
           <a href="/">
-            <span>AppName</span>
+            <span>Aidan's Portfolio</span>
           </a>
           <ul>
             {% if g.user %}
@@ -35,7 +35,16 @@
             </li>
             {% endif %}
             <li>
-              <a>Sample Nav Item</a>
+              <a href="{{ url_for('about.about') }}">About</a>
+            </li>
+            <li>
+              <a href="{{ url_for('resume.resume') }}">Resume</a>
+            </li>
+            <li>
+              <a href="{{ url_for('projects.projects') }}">Projects</a>
+            </li>
+            <li>
+              <a href="{{ url_for('contact.contact') }}">Contact</a>
             </li>
           </ul>
         </header>
