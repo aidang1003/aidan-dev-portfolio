@@ -7,3 +7,8 @@ projects_bp = Blueprint("projects", __name__)
 @projects_bp.route('/projects', methods=["GET","POST"])
 def projects():
     return render_template('projects.html', session=session)
+
+
+@projects_bp.route('/qrcode', methods=["GET","POST"])
+def qrcode():
+    return render_template('qrcode.html', session=session)
