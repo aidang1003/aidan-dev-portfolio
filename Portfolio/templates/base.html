@@ -24,12 +24,9 @@
           <ul>
             {% if g.user %}
             <li>
-              <a>Sample Hidden Nav Item</a>
+              <a>Hidden Nav Item</a>
             </li>
             {% endif %}
-            <li>
-              <a href="{{ url_for('about.about') }}">About</a>
-            </li>
             <li>
               <a href="{{ url_for('resume.resume') }}">Resume</a>
             </li>
