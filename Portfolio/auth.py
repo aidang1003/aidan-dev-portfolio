@@ -5,7 +5,7 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from Portfolio.db import get_db
+from portfolio.db import get_db
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 

@@ -63,12 +63,18 @@ Add dependencies to the requirements.txt: `pip freeze > requirements.txt`
 
 ## Deploy To a Server
 
-1. `py -m build --wheel`
+https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 
-2. `pip install flaskapp-1.0.0-py3-none-any.whl`
+1. `pip install build`
 
-3. `flask --app flaskapp init-db`
+2. `py -m build --wheel`
 
-4. `pip install waitress`
+3. Copy the wheel file to a different machine and run `pip install portfolio-1.0.0-py2.py3-none-any.whl`
 
-5. `waitress-serve --call 'flaskapp:create_app'`
+4. Re-initialize the db `flask --app portfolio init-db`
+
+5. Add the secret key to a new config.py file located at `\venv\var\portfolio-instance`
+
+5. `pip install waitress`
+
+6. `waitress-serve --call portfolio:create_app`
