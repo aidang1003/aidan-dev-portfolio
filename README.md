@@ -69,7 +69,7 @@ https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 
 2. `py -m build --wheel`
 
-3. Copy the wheel file to a different machine and run `pip install portfolio-1.0.0-py2.py3-none-any.whl`
+3. Copy the wheel file to a different machine and run `pip install portfolio-1.0.2-py2.py3-none-any.whl`
 
 4. Re-initialize the db `flask --app portfolio init-db`
 
