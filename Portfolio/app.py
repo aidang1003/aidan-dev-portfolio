@@ -5,10 +5,10 @@ import os
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__)
     load_dotenv(override=True) # load data from the .env file
     app.config.from_mapping(
-        SECRET_KEY=os.getenv('FLASK_SECRET_KEY'), # set the secret key
+        SECRET_KEY=os.getenv('$FLASK_SECRET_KEY'), # set the secret key
         DATABASE=os.path.join(app.instance_path, 'portfolio.sqlite'),
     )
 
@@ -22,6 +22,8 @@ def create_app(test_config=None):
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
+        print(os.makedirs(app.instance_path))
+
     except OSError:
         pass
         
@@ -33,22 +35,19 @@ def create_app(test_config=None):
     def favicon():
         return url_for('static', filename='images/favicon.ico')
 
-    from . import db
+    import db
     db.init_app(app)
 
-    from . import auth
-    app.register_blueprint(auth.auth_bp)
-
-    from . import about
+    import about
     app.register_blueprint(about.about_bp)
 
-    from . import resume
+    import resume
     app.register_blueprint(resume.resume_bp)
     
-    from . import projects
+    import projects
     app.register_blueprint(projects.projects_bp)
 
-    from . import contact
+    import contact
     app.register_blueprint(contact.contact_bp)
 
     return app
