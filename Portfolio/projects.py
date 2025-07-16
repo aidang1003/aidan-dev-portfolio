@@ -12,3 +12,8 @@ def projects():
 @projects_bp.route('/qrcode', methods=["GET","POST"])
 def qrcode():
     return render_template('qrcode.html', session=session)
+
+
+@projects_bp.route('/ethRaffle', methods=["GET","POST"])
+def ethRaffle():
+    return render_template('ethRaffle.html', session=session)

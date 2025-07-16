@@ -69,12 +69,16 @@ https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 
 2. `py -m build --wheel`
 
-3. Copy the wheel file to a different machine and run `pip install portfolio-1.0.2-py2.py3-none-any.whl`
+3. Copy the wheel file to a different machine 
 
-4. Re-initialize the db `flask --app portfolio init-db`
+4. (Optional) Create a virtual environment
 
-5. Add the secret key to a new config.py file located at `\venv\var\portfolio-instance`
+5. Run `pip install portfolio-1.0.3-py2.py3-none-any.whl`
 
-5. `pip install waitress`
+6. Re-initialize the db `flask --app portfolio init-db`
 
-6. `waitress-serve --call portfolio:create_app`
+7. Add the secret key to a new config.py file located at `echo FLASK_SECRET_KEY = [generate production key] > \venv\var\portfolio-instance\.env`
+
+8. `pip install waitress`
+
+9. `waitress-serve --call portfolio:create_app`
