@@ -61,7 +61,7 @@ Add dependencies to the requirements.txt: `pip freeze > requirements.txt`
 
 ---
 
-## Deploy To a Server
+## Deploy To a Server (Recommended Way)
 
 https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 
@@ -69,7 +69,7 @@ https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 
 2. `py -m build --wheel`
 
-3. Copy the wheel file to a different machine 
+3. Copy the wheel file to a different machine
 
 4. (Optional) Create a virtual environment
 
@@ -82,3 +82,21 @@ https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 8. `pip install waitress`
 
 9. `waitress-serve --call portfolio:create_app`
+
+---
+
+## Deploy to NameCheap (Learned Way)
+
+1. Zip all files
+
+2. Upload to C-Panel file system
+
+3. Create Flask App
+- Python version 3.9.22
+- Application startup file -> portfolio/__init__.py
+- Application entry point -> App
+
+4. Add requirements.txt configuration file and install it
+
+5. Validate wsgi file
+- Github version worked the last time, but who know what this will try to generate next time
