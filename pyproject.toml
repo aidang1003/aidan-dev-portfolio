@@ -1,7 +1,8 @@
 [project]
 name = "portfolio"
-version = "1.0.3"
+version = "1.0.4"
 description = "Aidan Gorny's portfolio application"
+requires-python = ">=3.9"
 dependencies = [
     "flask",
     "python-dotenv",
@@ -14,5 +15,3 @@ build-backend = "flit_core.buildapi"
 [tool.coverage.run]
 branch = true
 source = ["portfolio"]
-
-requires-python = ">=3.9.21"
