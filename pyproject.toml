@@ -15,3 +15,6 @@ build-backend = "flit_core.buildapi"
 [tool.coverage.run]
 branch = true
 source = ["portfolio"]
+
+[project.scripts]
+app = "portfolio:create_app"
