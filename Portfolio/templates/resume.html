@@ -1,20 +1,12 @@
 {% extends 'base.html' %} {% block title %}Resume{% endblock %} {% block body%}
-<div class="content-centered">
-  <h2>Resume</h2>
+<div style="padding: 2rem; text-align: center;">
+  <h2 style="margin-bottom: 2rem;">Resume</h2>
+  <a
+    href="{{ url_for('static', filename='pdf/AidanGornyResume.pdf') }}"
+    class="resume-download-button"
+    download
+  >
+    Download Resume (PDF)
+  </a>
 </div>
-<div>
-<iframe src="static/pdf/AidanGornyResume.pdf" width="800" height="500"
-  ></iframe>
-</div>
-
-
-    <script>
-      function SelectAll(id) {
-        document.getElementById(id).focus();
-        document.getElementById(id).select();
-      }
-    </script>
-
-    {% endblock %}</iframe
-
->
+{% endblock %}
