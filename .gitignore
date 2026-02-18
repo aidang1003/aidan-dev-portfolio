@@ -38,3 +38,4 @@ build/
 
 #Ignore the captain's log
 CaptainsLog.txt
+.vercel
