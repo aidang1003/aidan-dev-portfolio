@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head class="head">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} {% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link
       rel="icon"
-      href="{{url_for('static', filename='images/favicon.ico')}}"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
     <link
       rel="stylesheet"
@@ -14,34 +20,41 @@
       href="{{ url_for('static', filename='css/stylesheet.css') }}"
     />
   </head>
-  <body class="body">
-    <div>
-      <div class="container">
-        <header>
-          <a href="/">
-            <span>Aidan's Portfolio</span>
-          </a>
-          <ul>
-            {% if g.user %}
-            <li>
-              <a>Hidden Nav Item</a>
-            </li>
-            {% endif %}
-            <li>
-              <a href="{{ url_for('resume.resume') }}">Resume</a>
-            </li>
-            <li>
-              <a href="{{ url_for('projects.projects') }}">Projects</a>
-            </li>
-            <li>
-              <a href="{{ url_for('contact.contact') }}">Contact</a>
-            </li>
-          </ul>
-        </header>
-      </div>
-      <hr />
-      <br />
-      {% block body %} {% endblock %}
-    </div>
+  <body>
+    <nav class="nav" id="navbar">
+      <a href="#hero" class="nav__logo">Aidan Gorny</a>
+      <ul class="nav__links">
+        {% if g.user %}
+        <li>
+          <a class="nav__link" href="#">Hidden</a>
+        </li>
+        {% endif %}
+        <li>
+          <a class="nav__link" href="#about" data-section="about">About</a>
+        </li>
+        <li>
+          <a class="nav__link" href="#projects" data-section="projects"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a class="nav__link" href="#resume" data-section="resume">Resume</a>
+        </li>
+        <li>
+          <a class="nav__link" href="#contact" data-section="contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main class="{% block main_class %}{% endblock %}" id="scroll-container">
+      {% block body %}{% endblock %}
+    </main>
+
+    <script
+      src="{{ url_for('static', filename='js/scroll.js') }}"
+      defer
+    ></script>
   </body>
 </html>
