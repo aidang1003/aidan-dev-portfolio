@@ -10,5 +10,11 @@
             "src": "/(.*)",
             "dest": "/api/passenger_wsgi"
         }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/api/index"
+        }
     ]
 }
