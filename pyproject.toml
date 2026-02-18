@@ -1,6 +1,6 @@
 [project]
 name = "portfolio"
-version = "1.0.3"
+version = "1.0.4"
 description = "Aidan Gorny's portfolio application"
 requires-python = ">=3.9"
 dependencies = [
