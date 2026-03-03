@@ -7,14 +7,14 @@
 1. Clone this repository to local computer
 
 2. Create a new virtual environment
-
    - Windows: `py -m venv ./venv`
    - Mac: `python -m venv ./venv`
+   - Linux: `python3 -m venv ./venv`
 
 3. Activate the new virtual environment
-
    - Windows: `.\venv\Scripts\activate`
    - Mac: `source ./venv/bin/activate`
+   - Linux: `source ./venv/bin/activate`
 
 4. Install the dependencies `pip install -r requirements.txt`
 
@@ -92,11 +92,13 @@ https://flask.palletsprojects.com/en/stable/tutorial/deploy/
 2. Upload to C-Panel file system
 
 3. Create Flask App
+
 - Python version 3.9.22
-- Application startup file -> portfolio/__init__.py
+- Application startup file -> portfolio/**init**.py
 - Application entry point -> App
 
 4. Add requirements.txt configuration file and install it
 
 5. Validate wsgi file
+
 - Github version worked the last time, but who know what this will try to generate next time
