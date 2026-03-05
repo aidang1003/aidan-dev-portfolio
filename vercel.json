@@ -10,5 +10,11 @@
       "src": "/(.*)",
       "dest": "app.py"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/aidan-develops/speedrun-4*",
+      "destination": "https://aidan-develops.com/speedrun-4*"
+    }
   ]
 }
