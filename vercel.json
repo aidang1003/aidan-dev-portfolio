@@ -7,6 +7,10 @@
   ],
   "routes": [
     {
+      "src": "/speedrun-4(/.*)?",
+      "dest": "https://speedrun-eth-challenge-4-eta.vercel.app/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "app.py"
     }
