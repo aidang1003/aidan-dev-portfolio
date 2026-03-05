@@ -7,18 +7,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/speedrun-4",
-      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/"
+      "src": "/speedrun-4(/.*)?",
+      "dest": "https://speedrun-eth-challenge-4-eta.vercel.app/$1"
     },
     {
-      "source": "/speedrun-4/:path*",
-      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/:path*"
+      "src": "/(.*)",
+      "dest": "app.py"
     }
   ]
 }
