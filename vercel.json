@@ -8,7 +8,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "portfolio/__init__.py"
     },
     {
       "src": "/speedrun-4(/.*)?",
