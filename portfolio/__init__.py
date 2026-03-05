@@ -52,3 +52,9 @@ def create_app(test_config=None):
     app.register_blueprint(contact.contact_bp)
 
     return app
+
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run()
