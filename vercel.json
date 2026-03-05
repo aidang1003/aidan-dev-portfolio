@@ -15,6 +15,10 @@
     {
       "source": "/speedrun-4",
       "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/"
+    },
+    {
+      "source": "/speedrun-4/:path*",
+      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/:path*"
     }
   ]
 }
