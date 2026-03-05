@@ -8,7 +8,7 @@
   "rewrites": [
     {
       "source": "/speedrun-4/:match*",
-      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/:match*"
+      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/speedrun-4/:match*"
     },
     {
       "source": "/(.*)",
