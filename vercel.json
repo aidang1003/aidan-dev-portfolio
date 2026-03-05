@@ -12,7 +12,7 @@
     },
     {
       "src": "/speedrun-4(/.*)?",
-      "dest": "https://speedrun-eth-challenge-4-eta.vercel.app/$1"
+      "dest": "https://speedrun-eth-challenge-4-eta.vercel.app/speedrun-4/$1"
     }
   ]
 }
