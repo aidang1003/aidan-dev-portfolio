@@ -5,14 +5,11 @@
       "use": "@vercel/python"
     }
   ],
-  "redirects": [
+  "rewrites": [
     {
       "source": "/speedrun-4/:match*",
-      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/speedrun-4/:match*",
-      "permanent": false
-    }
-  ],
-  "rewrites": [
+      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/speedrun-4/:match*"
+    },
     {
       "source": "/(.*)",
       "destination": "/portfolio/__init__.py"
