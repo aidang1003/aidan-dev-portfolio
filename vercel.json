@@ -5,14 +5,14 @@
       "use": "@vercel/python"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "portfolio/__init__.py"
+      "source": "/speedrun-4/:match*",
+      "destination": "https://speedrun-eth-challenge-4-eta.vercel.app/:match*"
     },
     {
-      "src": "/speedrun-4(/.*)?",
-      "dest": "https://speedrun-eth-challenge-4-eta.vercel.app/$1"
+      "source": "/(.*)",
+      "destination": "/portfolio/__init__.py"
     }
   ]
 }
